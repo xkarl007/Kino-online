@@ -1,0 +1,353 @@
+<!DOCTYPE html> 
+<html lang="cs">
+  <head>
+  <!-- Odkaz na github: https://github.com/xkarl007/Kino-online -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="Author" content="Lukáš Karásek">
+  <title>Kino-Online - Dokumentace k aplikaci</title>     
+  </head>
+  <body>
+  	<section id="navigace-nadpis">
+  		<h1>Kino-Online</h1>
+	    <nav>
+	      <h3>Navigace:</h3>
+	      <ul>
+	        <li><a href="#uvod">Úvod</a></li>
+	        <li><a href="#metodika">Metodika - Použité nástroje</a></li>
+	        <li><a href="#popis">Popis elementů a atributů</a><ul><li><a href="#elementy">elementy</a></li><li><a href="#atributy">atributy</a></li></ul></li>	                
+	        <li><a href="#transf">Popis transformace</a></li>
+	        <li><a href="#zaver">Závěr</a></li>
+	      </ul>
+	      <hr /><br />
+	    </nav>
+    </section>
+    <main>
+      <section id="uvod">
+        <article>
+          <header>
+            <h2>Úvod</h2>
+          </header>          
+          <p>
+          Jako téma jsem si vybral fiktivní aplikaci <strong>"Kino-Online"</strong>. Tato aplikace by umožňovala online rezervaci v kině, anebo volbu online sledování nových filmů (Jako v kině, jen z pohodlí domova). 
+          </p> 
+        </article>
+      </section>
+      <section id="metodika">
+        <article>
+          <header>
+            <h2>Metodika</h2>
+          </header>
+          <h3>Využité programy</h3>
+          <p>
+          Při tvorbě práce jsem využil následující programy: <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="http://www.pspad.com/cz/">PSPad</a>, <a href="https://www.mozilla.org/cs/firefox/new/">Mozilla Firefox</a> a <a href="https://www.google.com/chrome/">Google Chrome</a>.    
+          </p>
+          <h3>Využité webové stránky</h3>
+          <p>
+            Většinu informací jsem našel na stránkách <a href="https://www.w3schools.com/">W3Schools</a>, validaci jsem provedl přes <a href="https://validator.w3.org/">W3.org</a>. Validaci XML/XSD/XSL jsem provedl přes <a href="http://www.freeformatter.com">Freeformatter.com</a>.
+          </p>        
+        </article>
+      </section>
+      <section id="popis" >
+        <article>
+          <header>
+            <h2>Popis elementů / atributů</h2>
+          </header>
+          <h3>Použité elementy</h3>
+          <table border="1" id="elementy">
+            <tr>
+              <td style="background: green;">Název elementu</td>
+              <td style="background: green;">Popis elementu</td>
+              <td style="background: green;">Schématické omezení</td>
+            </tr>
+            <tr>                       
+              <td>ob-nast</td>
+              <td>Obaluje obecné nastavení</td>
+              <td>Žádné</td>
+            </tr>
+            <tr>                       
+              <td>uvodni-stranka</td>
+              <td>Určuje adresu stránky, která se zobrazí jako první po načtení webaplikace</td>
+              <td>String</td>
+            </tr>
+            <tr>                       
+              <td>jazyk</td>
+              <td>Určuje jazyk, ve kterým se webaplikace zobrazí uživateli</td>
+              <td>Čeština, Angličtina, Ruština</td>
+            </tr>
+            <tr>                       
+              <td>charset</td>
+              <td>Určuje jakou znakovou sadu má prohlížeč použít</td>
+              <td>utf-8, utf-7, windows-1258</td>
+            </tr>            
+            <tr>                       
+              <td>google-id</td>
+              <td>Určuje číslo aplikace pro použití rozšíření od firmy Google (například AdSense)</td>
+              <td>Integer</td>
+            </tr>
+            <tr>                       
+              <td>protokol</td>
+              <td>Určuje jaký bude použit protokol pro zobrazení webaplikace</td>
+              <td>http, https</td>
+            </tr>
+            <tr>                       
+              <td>RSS-export</td>
+              <td>Určuje zda bude k dispozici export do RSS</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>tlacitko-facebook</td>
+              <td>Určuje zda bude v záhlaví webaplikace vždy zobrazeno tlačítko "To se mi líbí" od Facebooku</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>vyhledavani-host</td>
+              <td>Určuje zda bude k dispozici vyhledávající mechanismus na stránce pro neregistrované uživatele</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>vyhledavani-uzivatel</td>
+              <td>Určuje zda bude k dispozici vyhledávající mechanismus na stránce pro registrované uživatele</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>denni-rezim-schema</td>
+              <td>Určuje cestu k .css souboru, který bude načten ve dne</td>
+              <td>String</td>
+            </tr>
+            <tr>                       
+              <td>nocni-rezim-schema</td>
+              <td>Určuje cestu k .css souboru, který bude načten v noci</td>
+              <td>String</td>
+            </tr>  
+            <tr>                       
+              <td>robots</td>
+              <td>Určuje zda stránka poskytuje informace webovým robotům (crawlerům) sloužícím k indexování pro vyhledávače</td>
+              <td>1, 0</td>
+            </tr> 
+            <tr>                       
+              <td>ochrana-roboti</td>
+              <td>Určuje zda se u formulářů bude zobrazovat ochrana proti robotům (captcha)</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>tabulka-oprav</td>
+              <td>Obaluje nastavení oprávnění</td>
+              <td>Žádné</td>
+            </tr>
+            <tr>                       
+              <td>opravneni</td>
+              <td>Obaluje jednotlivé skupiny oprávnění</td>
+              <td>Žádné</td>
+            </tr>
+            <tr>                       
+              <td>id-opravneni</td>
+              <td>Určuje identifikační číslo oprávnění</td>
+              <td>Integer</td>
+            </tr>
+            <tr>                       
+              <td>program-cteni</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno zobrazit a číst program kina</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>program-rezervace</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno provádět rezervaci míst v kině</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>vip-rezervace</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno provádět VIP rezervaci míst v kině (VIP se mohou rezervovat ještě před vysíláním premiéry)</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>program-editace</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno upravovat program kina</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>online-sledovani</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno sledovat filmy po premiéře online</td>
+              <td>1, 0</td>
+            </tr> 
+            <tr>                       
+              <td>detail-filmu-cteni</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno zobrazit informace o daném filmu</td>
+              <td>1, 0</td>
+            </tr> 
+            <tr>                       
+              <td>hodnoceni-filmu</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno hodnotit filmy poté, co na nich v kině byl, či je viděl online</td>
+              <td>1, 0</td>
+            </tr> 
+            <tr>                       
+              <td>komentare</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno přidávat k filmu komentáře mimo recenze</td>
+              <td>1, 0</td>
+            </tr> 
+            <tr>                       
+              <td>narok-slevy</td>
+              <td>Určuje zda uživatel s tímto uprávněním má nárok na slevy, tedy na slevovou kartu</td>
+              <td>1, 0</td>
+            </tr> 
+            <tr>                       
+              <td>sprava-uzivatelu</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno upravovat jednotlivé uživatele aplikace, tedy mazat, upravovat informace, resetovat heslo uživatelů</td>
+              <td>1, 0</td>
+            </tr> 
+            <tr>                       
+              <td>sprava-komentaru</td>
+              <td>Určuje zda uživatel s tímto uprávněním má povoleno upravovat komentáře u filmů, případně je mazat</td>
+              <td>1, 0</td>
+            </tr> 
+            <tr>                       
+              <td>karty-nastaveni</td>
+              <td>Obaluje nastavení slevových karet</td>
+              <td>Žádné</td>
+            </tr>
+            <tr>                       
+              <td>karta</td>
+              <td>Obaluje nastavení jednotlivých skupin slevových karet</td>
+              <td>Žádné</td>
+            </tr>
+            <tr>                       
+              <td>cena-karty</td>
+              <td>Určuje kolik daná slevová karta stojí. Pokud je cena 0, kartu zakoupit nelze. Lze jí pouze získat využíváním stávající karty</td>
+              <td>Integer</td>
+            </tr>
+            <tr>                       
+              <td>doba-platnosti</td>
+              <td>Určuje jak dlouho daná slevová karta platí, než je nutno jí znovu zakoupit, či u nezakoupitelné propadne kredit</td>
+              <td>Integer</td>
+            </tr>
+            <tr>                       
+              <td>limit-kreditu</td>
+              <td>Určuje maximální limit, který určuje kolik kreditu na kartě může být</td>
+              <td>Integer</td>
+            </tr>
+            <tr>                       
+              <td>koeficient-kreditu</td>
+              <td>Určuje kolik procent dostane uživatel karty zpět z celkové ceny zakoupeného lístku/občerstvení</td>
+              <td>Čísla 1 až 100</td>
+            </tr>
+            <tr>                       
+              <td>dalsi-level</td>
+              <td>Určuje kolik je nutno provést plateb s danou slevovou kartou, než uživatel získá další - výhodnější stupeň karty</td>
+              <td>Integer</td>
+            </tr> 
+            <tr>                       
+              <td>VIP-vstup</td>
+              <td>Určuje zda má uživatel karty možnost vstupu do kina pomocí VIP vstupu (nemusí stát ve frontě)</td>
+              <td>1, 0</td>
+            </tr>
+            <tr>                       
+              <td>film-nastaveni</td>
+              <td>Obaluje obecné nastavení filmů</td>
+              <td>Žádné</td>
+            </tr>
+            <tr>                       
+              <td>nazev-filmu</td>
+              <td>Určuje jak se zobrazí název filmu v detailu filmu či v programu kina</td>
+              <td>String</td>
+            </tr>
+            <tr>                       
+              <td>id-filmu</td>
+              <td>Určuje identifikační číslo filmu (pro snadné vyhledání například při jazykové bariéře)</td>
+              <td>Integer</td>
+            </tr>
+            <tr>                       
+              <td>titulky</td>
+              <td>Určuje zda se zobrazí titulky u filmu při přehrávání v kině, případně jakého jazyka</td>
+              <td>Žádné, České, Anglické, Ruské</td>
+            </tr>
+            <tr>                       
+              <td>dabing</td>
+              <td>Určuje jaký dabing bude daný film mít při přehrávání v kině</td>
+              <td>Český, Anglický, Ruský</td>
+            </tr>
+            <tr>                       
+              <td>datum-zverejneni</td>
+              <td>Určuje datum, ve kterém film vyšel</td>
+              <td>Datum musí být ve formátu DD.MM.RRRR</td>
+            </tr>
+            <tr>                       
+              <td>vek-omezeni</td>
+              <td>Určuje od kolika let bude zákazník vpuštěn do kina na daný film, či mu bude online přehrán</td>
+              <td>Číslo 0 až 18</td>
+            </tr>
+            <tr>                       
+              <td>delka-minut</td>
+              <td>Určuje kolik minut je dlouhý daný film</td>
+              <td>Integer</td>
+            </tr>
+            <tr>                       
+              <td>trojrozmerne</td>
+              <td>Určuje zda film je natočen i s podporou 3D</td>
+              <td>Integer</td>
+            </tr>
+            <tr>                       
+              <td>online-nastaveni</td>
+              <td>Obaluje nastavení online sledování filmů</td>
+              <td>Žádné</td>
+            </tr>
+            <tr>                       
+              <td>titulky</td>
+              <td>Určuje jaké titulky je možno použít při přehrávání daného filmu online</td>
+              <td>Žádné, České, Anglické, Ruské</td>
+            </tr>
+            <tr>                       
+              <td>kvalita</td>
+              <td>Určuje v jaké kvalitě se film přehraje při přehrávání daného filmu online</td>
+              <td>HD, 720 px, 256 px</td>
+            </tr>
+            <tr>                       
+              <td>mod-prehravani</td>
+              <td>Určuje pomocí jaké technologie se daný filmu při online sledování přehraje</td>
+              <td>html5, Flash, Java</td>
+            </tr>
+            <tr>                       
+              <td>hlasitost</td>
+              <td>Určuje hlasitost daného filmu při přehrávání online</td>
+              <td>Číslo 0 až 120</td>
+            </tr>                                                              
+          </table>
+          <h3>Použité atributy</h3>
+          <table border="1" id="atributy" title="Tabulka atributů">
+            <tr>
+              <td style="background: green;">Název atributu</td>
+              <td style="background: green;">Popis atributu</td>
+            </tr>
+            <tr>                       
+              <td>oprnazev</td>
+              <td>Určuje název daného oprávnění</td>
+            </tr>
+            <tr>                       
+              <td>knazev</td>
+              <td>Určuje název dané slevové karty</td>
+            </tr>                       
+          </table>
+        </article>
+      </section>
+      <section id="transf">
+        <article>
+          <header>
+            <h2>Popis transformace</h2>
+          </header>
+          <p>Transformace vybere a ve formátu JSON vypíše údaje o slevových kartách, které mají kreditový koeficient vyšší nebo rovný deseti procentům. Vybrané údaje jsou Název karty, její limit kreditů, koeficient kreditu, a doba platnosti </p>
+        </article>
+      </section>
+      <section id="zaver">
+        <article>
+          <header>
+            <h2>Závěr</h2>
+          </header>
+          <p>Tato práce mi umožnila aktivně využít technologii XML k vytvoření smysluplného nastavení pro neexistující aplikaci. Nastavení by šlo velmi rozšířit, ale myslím si že v rámci předmětu Značkovací Jazyky by takhle mohlo stačit. Pro HTML dokumentaci jsem podle zadání nepoužil styly, pouze jsem ručně zabarvil první buňky tabulek, aby byla tabulka přehlednější, a zobrazil rámečky.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+    <p><strong>Vytvořil</strong>: Lukáš Karásek, xkarl007 / Česká Zemědělská univerzita Praha, dne 15.4.2017
+    </p>
+    </footer>
+  </body>
+</html>

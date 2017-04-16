@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+  <?xml-stylesheet type="text/xsl" href="Lukas_Karasek.xsl"?>
+  <!-- Odkaz na github: https://github.com/xkarl007/Kino-online --> 
+<KinoOnline_konfigurace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Lukas_Karasek.xsd">
+
+<!-- Obecné nastavení aplikace -->
+<ob-nast>	
+	<uvodni-stranka>index.php</uvodni-stranka>
+	<jazyk>Čeština</jazyk>
+	<charset>utf-8</charset>
+	<google-id>1972</google-id>
+	<protokol>https</protokol>
+	<RSS-export>1</RSS-export>	
+	<tlacitko-facebook>1</tlacitko-facebook>
+	<vyhledavani-host>1</vyhledavani-host>
+	<vyhledavani-uzivatel>1</vyhledavani-uzivatel>
+	<denni-rezim-schema>/css/den.css</denni-rezim-schema>
+	<nocni-rezim-schema>/css/noc.css</nocni-rezim-schema>
+	<robots>1</robots>
+	<ochrana-roboti>0</ochrana-roboti>
+</ob-nast>
+
+<!-- Nastavení oprávnění uživatelů -->
+<tabulka-oprav>
+	<opravneni oprnazev="host">
+		<id-opravneni>0</id-opravneni>
+		<program-cteni>1</program-cteni>
+		<program-rezervace>0</program-rezervace>
+		<vip-rezervace>0</vip-rezervace>
+		<program-editace>0</program-editace>
+		<online-sledovani>0</online-sledovani>
+		<detail-filmu-cteni>1</detail-filmu-cteni>
+		<hodnoceni-filmu>0</hodnoceni-filmu>
+		<komentare>0</komentare>
+		<sprava-uzivatelu>0</sprava-uzivatelu>
+		<sprava-komentaru>0</sprava-komentaru>
+	</opravneni>
+	<opravneni oprnazev="registrovany">
+		<id-opravneni>1</id-opravneni>
+		<program-cteni>1</program-cteni>
+		<program-rezervace>1</program-rezervace>
+		<vip-rezervace>0</vip-rezervace>
+		<program-editace>0</program-editace>
+		<online-sledovani>1</online-sledovani>
+		<detail-filmu-cteni>1</detail-filmu-cteni>
+		<hodnoceni-filmu>1</hodnoceni-filmu>
+		<komentare>1</komentare>
+		<narok-slevy>1</narok-slevy>
+		<sprava-uzivatelu>0</sprava-uzivatelu>
+		<sprava-komentaru>0</sprava-komentaru>
+	</opravneni>
+	<opravneni oprnazev="VIP">
+		<id-opravneni>2</id-opravneni>
+		<program-cteni>1</program-cteni>
+		<program-rezervace>1</program-rezervace>
+		<vip-rezervace>1</vip-rezervace>
+		<program-editace>0</program-editace>
+		<online-sledovani>1</online-sledovani>
+		<detail-filmu-cteni>1</detail-filmu-cteni>
+		<hodnoceni-filmu>1</hodnoceni-filmu>
+		<komentare>1</komentare>
+		<narok-slevy>1</narok-slevy>
+		<sprava-uzivatelu>0</sprava-uzivatelu>
+		<sprava-komentaru>0</sprava-komentaru>
+	</opravneni>
+	<opravneni oprnazev="zamestnanec">
+		<id-opravneni>3</id-opravneni>
+		<program-cteni>1</program-cteni>
+		<program-rezervace>1</program-rezervace>
+		<vip-rezervace>1</vip-rezervace>
+		<program-editace>1</program-editace>
+		<online-sledovani>1</online-sledovani>
+		<detail-filmu-cteni>1</detail-filmu-cteni>
+		<hodnoceni-filmu>1</hodnoceni-filmu>
+		<komentare>1</komentare>
+		<narok-slevy>1</narok-slevy>
+		<sprava-uzivatelu>0</sprava-uzivatelu>
+		<sprava-komentaru>1</sprava-komentaru>
+	</opravneni>
+	<opravneni oprnazev="admin">
+		<id-opravneni>4</id-opravneni>
+		<program-cteni>1</program-cteni>
+		<program-rezervace>1</program-rezervace>
+		<vip-rezervace>1</vip-rezervace>
+		<program-editace>1</program-editace>
+		<online-sledovani>1</online-sledovani>
+		<detail-filmu-cteni>1</detail-filmu-cteni>
+		<hodnoceni-filmu>1</hodnoceni-filmu>
+		<komentare>1</komentare>
+		<narok-slevy>0</narok-slevy>
+		<sprava-uzivatelu>1</sprava-uzivatelu>
+		<sprava-komentaru>1</sprava-komentaru>
+	</opravneni>
+</tabulka-oprav>
+
+<!-- Nastavení karet -->
+<karty-nastaveni>
+	<karta knazev="Standart">
+		<cena-karty>60</cena-karty>
+		<doba-platnosti>12</doba-platnosti>
+		<koeficient-kreditu>5</koeficient-kreditu>
+		<limit-kreditu>100</limit-kreditu>
+		<dalsi-level>40</dalsi-level>
+		<VIP-vstup>0</VIP-vstup>
+	</karta>
+	<karta knazev="Silver">
+		<cena-karty>0</cena-karty>
+		<doba-platnosti>24</doba-platnosti>
+		<koeficient-kreditu>15</koeficient-kreditu>
+		<limit-kreditu>500</limit-kreditu>
+		<dalsi-level>60</dalsi-level>
+		<VIP-vstup>0</VIP-vstup>
+	</karta>
+	<karta knazev="Golden">
+		<cena-karty>0</cena-karty>
+		<doba-platnosti>24</doba-platnosti>
+		<koeficient-kreditu>25</koeficient-kreditu>
+		<limit-kreditu>1000</limit-kreditu>
+		<dalsi-level>0</dalsi-level>
+		<VIP-vstup>0</VIP-vstup>
+	</karta>
+	<karta knazev="VIP">
+		<cena-karty>800</cena-karty>
+		<doba-platnosti>12</doba-platnosti>
+		<koeficient-kreditu>29</koeficient-kreditu>
+		<limit-kreditu>1500</limit-kreditu>
+		<dalsi-level>0</dalsi-level>
+		<VIP-vstup>1</VIP-vstup>
+	</karta>
+</karty-nastaveni>
+
+<!-- Nastavení filmů obecné -->
+<film-nastaveni>
+	<nazev-filmu>Test film</nazev-filmu>
+	<id-filmu>0</id-filmu>
+	<titulky>České</titulky>
+	<dabing>Anglický</dabing>
+	<datum-zverejneni>01.01.2017</datum-zverejneni>
+	<vek-omezeni>0</vek-omezeni>
+	<delka-minut>75</delka-minut>
+	<trojrozmerne>0</trojrozmerne>
+</film-nastaveni>
+
+<!-- Nastavení online sledovaní -->
+<online-nastaveni>
+	<titulky>Žádné</titulky>
+	<kvalita>HD</kvalita>
+	<mod-prehravani>html5</mod-prehravani>
+	<hlasitost>100</hlasitost>
+ </online-nastaveni>
+
+</KinoOnline_konfigurace>

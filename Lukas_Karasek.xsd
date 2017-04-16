@@ -1,0 +1,178 @@
+<!-- Odkaz na github: https://github.com/xkarl007/Kino-online -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="KinoOnline_konfigurace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ob-nast">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="uvodni-stranka"/>
+              <xs:element type="jazyko" name="jazyk"/>
+              <xs:element type="charseto" name="charset"/>
+              <xs:element type="xs:integer" name="google-id"/>
+              <xs:element type="protokolo" name="protokol"/>
+              <xs:element type="zapnuto" name="RSS-export"/>
+              <xs:element type="zapnuto" name="tlacitko-facebook"/>
+              <xs:element type="zapnuto" name="vyhledavani-host"/>
+              <xs:element type="zapnuto" name="vyhledavani-uzivatel"/>
+              <xs:element type="xs:string" name="denni-rezim-schema"/>
+              <xs:element type="xs:string" name="nocni-rezim-schema"/>
+              <xs:element type="zapnuto" name="robots"/>
+              <xs:element type="zapnuto" name="ochrana-roboti"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tabulka-oprav">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="opravneni" maxOccurs="unbounded" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:integer" name="id-opravneni"/>
+                    <xs:element type="zapnuto" name="program-cteni"/>
+                    <xs:element type="zapnuto" name="program-rezervace"/>
+                    <xs:element type="zapnuto" name="vip-rezervace"/>
+                    <xs:element type="zapnuto" name="program-editace"/>
+                    <xs:element type="zapnuto" name="online-sledovani"/>
+                    <xs:element type="zapnuto" name="detail-filmu-cteni"/>
+                    <xs:element type="zapnuto" name="hodnoceni-filmu"/>
+                    <xs:element type="zapnuto" name="komentare"/>
+                    <xs:element type="zapnuto" name="narok-slevy" minOccurs="0"/>
+                    <xs:element type="zapnuto" name="sprava-uzivatelu"/>
+                    <xs:element type="zapnuto" name="sprava-komentaru"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="oprnazev" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="karty-nastaveni">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="karta" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:integer" name="cena-karty"/>
+                    <xs:element type="xs:integer" name="doba-platnosti"/>
+                    <xs:element type="koeficient" name="koeficient-kreditu"/>
+                    <xs:element type="xs:integer" name="limit-kreditu"/>
+                    <xs:element type="xs:integer" name="dalsi-level"/>
+                    <xs:element type="zapnuto" name="VIP-vstup"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="knazev" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="film-nastaveni">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="nazev-filmu"/>
+              <xs:element type="xs:integer" name="id-filmu"/>
+              <xs:element type="titulkyo" name="titulky"/>
+              <xs:element type="dabingo" name="dabing"/>
+              <xs:element type="datumo" name="datum-zverejneni"/>
+              <xs:element type="vek-om" name="vek-omezeni"/>
+              <xs:element type="xs:integer" name="delka-minut"/>
+              <xs:element type="zapnuto" name="trojrozmerne"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="online-nastaveni">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="titulkyo" name="titulky"/>
+              <xs:element type="kvalitao" name="kvalita"/>
+              <xs:element type="mod" name="mod-prehravani"/>
+              <xs:element type="hlasitosto" name="hlasitost"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Nastavení omezení -->
+  <xs:simpleType name="zapnuto"> <!-- Omezení zapnuto/vypnuto 0/1 -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="koeficient"> <!-- Omezení 1-100 -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="jazyko"> <!-- Omezení nastavení jazyku -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Čeština"/>
+      <xs:enumeration value="Angličtina"/>
+      <xs:enumeration value="Ruština"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="charseto"> <!-- Omezení nastavení charsetu -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="utf-7"/>
+      <xs:enumeration value="windows-1258"/>
+      <xs:enumeration value="utf-8"/>
+      <xs:enumeration value="iso-8859"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="protokolo"> <!-- Omezení nastavení protokolů -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="http"/>
+      <xs:enumeration value="https"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="titulkyo"> <!-- Omezení nastavení titulek -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Žádné"/>
+      <xs:enumeration value="České"/>
+      <xs:enumeration value="Anglické"/>
+      <xs:enumeration value="Ruské"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="dabingo"> <!-- Omezení nastavení dabingu -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Český"/>
+      <xs:enumeration value="Anglický"/>
+      <xs:enumeration value="Ruský"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="kvalitao"> <!-- Omezení nastavení kvality obrazu u online přehrávání -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HD"/>
+      <xs:enumeration value="720 px"/>
+      <xs:enumeration value="256 px"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="vek-om"> <!-- Omezení nastavení věku 0-18 -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="18"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="mod"> <!-- Omezení nastavení módu přehrávání u online přehrávání -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="html5"/>
+      <xs:enumeration value="Flash"/>
+      <xs:enumeration value="Java"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="hlasitosto"> <!-- Omezení nastavení hlasitosti u online přehrávání -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="120"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="datumo"> <!-- Omezení nastavení datumu pro Český formát -->
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{2}[.]\d{2}[.]\d{4}"/>
+      <xs:length value="10"/>
+      </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
